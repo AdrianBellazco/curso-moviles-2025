@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:hola_mundo/formView.dart';
 
 
 // punto de partida de la aplicacion 
@@ -38,6 +39,7 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
   int _counter = 0;
+ 
 
   void _incrementCounter() {
     setState(() {
@@ -109,44 +111,40 @@ class _MyHomePageState extends State<MyHomePage> {
             children: [
               const Text('Esta es la segunda fila UuU')
             ],
-            )
+            ),
+
+            
+            
+            const SizedBox(height: 20), // ESPACIO ENTRE FILAS
+
+            Row( //segunda fila 
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              const Text('Esta es la segunda fila UuU')
+            ],
+
+            ),
+            //text file
+            IconButton(
+               icon: const Icon(Icons.minimize),
+               tooltip: 'Disminuir',
+               onPressed: () {
+               Navigator.push(
+               context,
+               MaterialPageRoute(builder:
+(context) => FormView()),
+);
+},
+           ),
         
           ],
           
         )
 
 ),
-/**
-        child: Column(
-         
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            const Text('Adri points'),
-            Text(
-              '$_counter',
-              style: Theme.of(context).textTheme.headlineMedium,
-            ),
-            
-            IconButton(
-          icon: const Icon(Icons.add),
-          tooltip: 'Aumentar',
-          onPressed: _incrementCounter,
-        ),
 
-             IconButton(
-          icon: const Icon(Icons.minimize),
-          tooltip: 'Disminuir',
-          onPressed: (){
-            setState(() {
-              _counter--;
-            });
-          },
-        ),
 
-          ],
-        ),
-       */
-     
 
       
       floatingActionButton: FloatingActionButton(
