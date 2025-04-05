@@ -1,26 +1,13 @@
 import 'package:flutter/material.dart';
-
-class contador extends StatefulWidget {
-  const contador({super.key});
+/*
+class AddUser extends StatefulWidget {
+  const AddUser({super.key});
 
   @override
-  State<contador> createState() => _contadorState();
+  State<AddUser> createState() => _AddUserState();
 }
 
-class _contadorState extends State<contador> {
-
-    String myVariable = "";
-   String textoTipado = "";
-
-
-  int _counter = 0;
-
-  void _incrementCounter() {
-    setState(() {
-      _counter++;
-    });
-  }
-
+class _AddUserState extends State<AddUser> {
   @override
   Widget build(BuildContext context) {
     return Column( //columna que envuelve todo 
@@ -28,11 +15,12 @@ class _contadorState extends State<contador> {
 
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            
             Row( //primera fila
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
+
+              MaterialApp()              
 
                IconButton(
                icon: const Icon(Icons.minimize),
@@ -44,15 +32,7 @@ class _contadorState extends State<contador> {
             },
            ),
 
-              Column( // columna dentro de la fila 
-                mainAxisSize: MainAxisSize.min,
-                children: [
-                  const Text('Adri Points'),
-                  Text(
-                '$_counter',
-                style: Theme.of(context).textTheme.headlineMedium,
-               ),
-                ],
+              Column(
                ),
                
 
@@ -69,9 +49,6 @@ class _contadorState extends State<contador> {
             ),
           ]
     );
-
-            
- 
   }
-  
 }
+*/
