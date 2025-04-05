@@ -37,6 +37,11 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
+
+   String myVariable = "";
+   String textoTipado = "";
+
+
   int _counter = 0;
 
   void _incrementCounter() {
@@ -102,13 +107,55 @@ class _MyHomePageState extends State<MyHomePage> {
 
             
             ),
+
+           
+
+            
             const SizedBox(height: 20), // ESPACIO ENTRE FILAS
+
             Row( //segunda fila 
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               const Text('Esta es la segunda fila UuU')
             ],
+
+            ),
+            //text file
+             Row( // Tercera fila 
+
+             mainAxisAlignment: MainAxisAlignment.center,
+             crossAxisAlignment: CrossAxisAlignment.center,
+             children: [
+              SizedBox(
+              width: 250,
+              child: TextField(
+              //obscureText: true,
+              onChanged: (value){
+                setState(() {
+                  textoTipado = value;
+                });
+              },
+              decoration: const InputDecoration(border: OutlineInputBorder(), labelText: 'Password'),
+             ),
+             )
+             ],
+
+            ),
+
+            Row(
+               mainAxisAlignment: MainAxisAlignment.center,
+             crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  Text(
+                textoTipado, //variable
+                style: TextStyle(
+                fontSize: 24,
+                fontWeight: FontWeight.bold,
+                color: const Color.fromARGB(255, 114, 126, 255),
+              ),
+              ),
+                ],
             )
         
           ],
