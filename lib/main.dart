@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-
+import 'package:hola_mundo/routes/app_router.dart';
+import 'themes/app_theme.dart';
 
 // punto de partida de la aplicacion 
 void main() {
@@ -14,17 +15,17 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp( //define la esstructura de la app
-      title: 'Flutter Demo',
-      theme: ThemeData(
-      
-        colorScheme: ColorScheme.fromSeed(seedColor: const Color.fromARGB(255, 78, 58, 255)),
-      ),
-      // home - define la pantalla inicial
-      home: const MyHomePage(title: 'Hola mundo - Adrian '),
-    );
+    return MaterialApp.router( //define la esstructura de la app
+      theme: 
+        AppTheme.lightTheme, //tema personalizado
+        title: 'Flutter - Uceva',
+        routerConfig: appRouter, //usa el router configurado 
+     
+      );
   }
 }
+
+/*
 
 class MyHomePage extends StatefulWidget {
   const MyHomePage({super.key, required this.title});
@@ -142,7 +143,27 @@ class _MyHomePageState extends State<MyHomePage> {
              ],
 
             ),
-
+const Row(
+  mainAxisAlignment: MainAxisAlignment.spaceAround,
+  children: <Widget>[
+    Icon(
+      Icons.favorite,
+      color: Colors.pink,
+      size: 24.0,
+      semanticLabel: 'Text to announce in accessibility modes',
+    ),
+    Icon(
+      Icons.audiotrack,
+      color: Colors.green,
+      size: 30.0,
+    ),
+    Icon(
+      Icons.beach_access,
+      color: Colors.blue,
+      size: 36.0,
+    ),
+  ],
+),
             Row(
                mainAxisAlignment: MainAxisAlignment.center,
              crossAxisAlignment: CrossAxisAlignment.center,
@@ -204,3 +225,4 @@ class _MyHomePageState extends State<MyHomePage> {
     );
   }
 }
+*/
