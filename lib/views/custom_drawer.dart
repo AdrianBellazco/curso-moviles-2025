@@ -81,21 +81,20 @@ class CustomDrawer extends StatelessWidget {
               context.go('/contadores');
             },
           ), 
-          //!FUTURE
           ListTile(
             leading: const Icon(Icons.work),
             title: const Text('Tarea pesada'),
             onTap: () => context.go('/tarea_pesada'),
           ),
           //!TIMER
-         /* ListTile(
-            leading: const Icon(Icons.timer),
-            title: const Text('Timer'),
+         ListTile(
+            leading: const Icon(Icons.restaurant),
+            title: const Text('Restaorante'),
             onTap: () {
-              context.goNamed('timerView');
+              context.go('/restaorante');
             },
           ),
-
+ /*
           //!ISOLATE
           ListTile(
             leading: const Icon(Icons.memory),

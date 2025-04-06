@@ -2,6 +2,8 @@ import 'package:go_router/go_router.dart';
 import 'package:hola_mundo/views/Temporizadores.dart';
 import 'package:hola_mundo/views/home_view.dart';
 import 'package:hola_mundo/views/profile_view.dart';
+import 'package:hola_mundo/views/restaurante/detalle_view.dart';
+import 'package:hola_mundo/views/restaurante/restaurante_view.dart';
 import 'package:hola_mundo/views/settings_view.dart';
 import 'package:hola_mundo/views/lista_estudiantes.dart';
 import 'package:hola_mundo/views/tarea_pesada.dart';
@@ -31,6 +33,18 @@ final GoRouter appRouter = GoRouter (
       GoRoute(
       path: '/tarea_pesada',
       builder: (context, state) => TareaPesada(),
-      )
+      ),
+       GoRoute(
+      path: '/restaorante',
+      builder: (context, state) => RestauranteView(),
+      ),
+      GoRoute(
+      path: '/detalle/:id',
+      name: 'detalle',
+      builder: (context, state) {
+      final id = state.pathParameters['id']!;
+      return DetalleView(id: id); 
+  },
+),
   ],
 );

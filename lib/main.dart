@@ -1,10 +1,16 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:hola_mundo/routes/app_router.dart';
 import 'themes/app_theme.dart';
 
 // punto de partida de la aplicacion 
-void main() {
-  runApp(const MyApp());
+void main() async {
+
+  WidgetsFlutterBinding.ensureInitialized(); // !Importante para que funcione el doten
+
+  // ! Carga el archivo .env en la raiz del proyecto
+    await dotenv.load(fileName: ".env");
+    runApp(const MyApp());
 }
 
 // StatelessWidget | widget que no cambia
