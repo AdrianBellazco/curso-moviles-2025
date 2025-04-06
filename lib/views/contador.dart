@@ -11,7 +11,7 @@ class _contadorState extends State<contador> {
 
     String myVariable = "";
    String textoTipado = "";
-
+ 
 
   int _counter = 0;
 
