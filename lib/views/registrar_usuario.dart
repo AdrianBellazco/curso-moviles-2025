@@ -13,7 +13,27 @@ class _RegistrarUsuarioState extends State<RegistrarUsuario> {
   final TextEditingController _controller = TextEditingController();
 
   @override
+  void initState() {
+    super.initState();
+    print('RegistrarUsuario - initState');
+  }
+
+  @override
+  void didChangeDependencies() {
+    super.didChangeDependencies();
+    print('RegistrarUsuario - didChangeDependencies');
+  }
+
+  @override
+  void dispose() {
+    print('RegistrarUsuario - dispose');
+    _controller.dispose();
+    super.dispose();
+  }
+
+  @override
   Widget build(BuildContext context) {
+    print('RegistrarUsuario - build');
     return Padding(
       padding: const EdgeInsets.all(16.0),
       child: Column(
