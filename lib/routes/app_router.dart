@@ -4,6 +4,7 @@ import 'package:hola_mundo/views/home_view.dart';
 import 'package:hola_mundo/views/profile_view.dart';
 import 'package:hola_mundo/views/settings_view.dart';
 import 'package:hola_mundo/views/lista_estudiantes.dart';
+import 'package:hola_mundo/views/tarea_pesada.dart';
 
 final GoRouter appRouter = GoRouter (
   routes: [
@@ -26,6 +27,10 @@ final GoRouter appRouter = GoRouter (
       GoRoute(
       path: '/contadores',
       builder: (context, state) => Temporizadores(),
+      ),
+      GoRoute(
+      path: '/tarea_pesada',
+      builder: (context, state) => TareaPesada(),
       )
   ],
 );
