@@ -47,6 +47,10 @@ class _RegistrarUsuarioState extends State<RegistrarUsuario> {
           ),
           const SizedBox(height: 16),
           ElevatedButton(
+             style: ElevatedButton.styleFrom(
+             backgroundColor: const Color.fromARGB(255, 207, 255, 199),
+             foregroundColor: const Color.fromARGB(255, 255, 203, 240),
+  ),
             onPressed: () {
               final nombre = _controller.text.trim();
               if (nombre.isNotEmpty) {

@@ -70,16 +70,32 @@ class _TemporizadoresState extends State<Temporizadores> {
               alignment: WrapAlignment.center,
               children: [
                 ElevatedButton.icon(
+                  style: ElevatedButton.styleFrom(
+                  backgroundColor: const Color.fromARGB(255, 182, 255, 169),
+                  foregroundColor: const Color.fromARGB(255, 255, 255, 255),
+
+                  ),
                   onPressed: _iniciarTemporizador,
                   icon: const Icon(Icons.play_arrow),
                   label: const Text('Iniciar'),
+                  
                 ),
                 ElevatedButton.icon(
+                  style: ElevatedButton.styleFrom(
+                  backgroundColor: const Color.fromARGB(255, 255, 150, 150),
+                  foregroundColor: const Color.fromARGB(255, 255, 255, 255),
+
+                  ),
                   onPressed: _pausarTemporizador,
                   icon: const Icon(Icons.pause),
                   label: const Text('Pausar'),
                 ),
                 ElevatedButton.icon(
+                  style: ElevatedButton.styleFrom(
+                  backgroundColor: const Color.fromARGB(255, 151, 147, 255),
+                  foregroundColor: const Color.fromARGB(255, 255, 255, 255),
+
+                  ),
                   onPressed: _reiniciarContador,
                   icon: const Icon(Icons.restart_alt),
                   label: const Text('Reiniciar'),
