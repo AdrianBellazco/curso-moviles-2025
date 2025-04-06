@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:hola_mundo/views/add_user.dart';
 import 'package:hola_mundo/views/base_view.dart';
-import 'package:hola_mundo/views/contador.dart';
 import 'package:hola_mundo/views/registrar_usuario.dart';
 import 'package:hola_mundo/views/ver_usuarios.dart';
 
