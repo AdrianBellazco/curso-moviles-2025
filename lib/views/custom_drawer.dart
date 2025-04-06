@@ -65,22 +65,22 @@ class CustomDrawer extends StatelessWidget {
               Navigator.pop(context); // Cierra el drawer
             },
           ),
-          /*
+      
           //!PASO DE PARAMETROS
           ListTile(
-            leading: const Icon(Icons.input),
-            title: const Text('Paso de Parámetros'),
+            leading: const Icon(Icons.people),
+            title: const Text('Lista de estudiantes'),
             onTap: () {
-              context.go('/paso_parametros');
+              context.go('/lista_estudiantes');
             },
-          ),
+          ),     
           ListTile(
-            leading: const Icon(Icons.loop),
-            title: const Text('Ciclo de Vida'),
+            leading: const Icon(Icons.timer),
+            title: const Text('Temporizadores'),
             onTap: () {
-              context.go('/ciclo_vida');
+              context.go('/contadores');
             },
-          ),
+          ), /*
           //!FUTURE
           ListTile(
             leading: const Icon(Icons.schedule),

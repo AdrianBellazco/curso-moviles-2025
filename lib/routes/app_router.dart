@@ -1,7 +1,9 @@
 import 'package:go_router/go_router.dart';
+import 'package:hola_mundo/views/Temporizadores.dart';
 import 'package:hola_mundo/views/home_view.dart';
 import 'package:hola_mundo/views/profile_view.dart';
 import 'package:hola_mundo/views/settings_view.dart';
+import 'package:hola_mundo/views/lista_estudiantes.dart';
 
 final GoRouter appRouter = GoRouter (
   routes: [
@@ -17,5 +19,13 @@ final GoRouter appRouter = GoRouter (
       path: '/profile',
       builder: (context, state) => ProfileView(),
     ),
+     GoRoute(
+      path: '/lista_estudiantes',
+      builder: (context, state) => ListaEstudiantes(),
+      ),
+      GoRoute(
+      path: '/contadores',
+      builder: (context, state) => Temporizadores(),
+      )
   ],
 );
