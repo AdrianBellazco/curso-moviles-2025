@@ -1,6 +1,19 @@
 # hola_mundo
 
-A new Flutter project.
+Gestión de Usuarios con Tabs y Ciclo de Vida en Flutter
+
+Adrián Sebastian Saavedra Romero
+6° semestre - Ingeniería en Sistemas
+
+Esta aplicación de ejemplo está desarrollada en Flutter y tiene como objetivo:
+
+Mostrar el uso del paso de parámetros entre widgets.
+
+Evidenciar el ciclo de vida de los widgets en Flutter.
+
+Aplicar conceptos como TabBar, Drawer, y gestión de estado.
+
+La app permite registrar nombres de usuarios y visualizarlos en una cuadrícula desde otra pestaña. Todo el proceso se realiza en una única vista, utilizando un TabBar.
 
 ## Getting Started
 
