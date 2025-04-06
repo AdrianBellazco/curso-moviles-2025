@@ -1,10 +1,14 @@
 import 'package:flutter/material.dart';
-import 'package:hola_mundo/formView.dart';
 
 
 // punto de partida de la aplicacion 
-void main() {
-  runApp(const MyApp());
+void main() async {
+
+  WidgetsFlutterBinding.ensureInitialized(); // !Importante para que funcione el doten
+
+  // ! Carga el archivo .env en la raiz del proyecto
+    await dotenv.load(fileName: ".env");
+    runApp(const MyApp());
 }
 
 // StatelessWidget | widget que no cambia
@@ -15,17 +19,17 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp( //define la esstructura de la app
-      title: 'Flutter Demo',
-      theme: ThemeData(
-      
-        colorScheme: ColorScheme.fromSeed(seedColor: const Color.fromARGB(255, 78, 58, 255)),
-      ),
-      // home - define la pantalla inicial
-      home: const MyHomePage(title: 'Hola mundo - Adrian '),
-    );
+    return MaterialApp.router( //define la esstructura de la app
+      theme: 
+        AppTheme.lightTheme, //tema personalizado
+        title: 'Flutter - Uceva',
+        routerConfig: appRouter, //usa el router configurado 
+     
+      );
   }
 }
+
+/*
 
 class MyHomePage extends StatefulWidget {
   const MyHomePage({super.key, required this.title});
@@ -38,6 +42,11 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
+
+   String myVariable = "";
+   String textoTipado = "";
+
+
   int _counter = 0;
  
 
@@ -104,16 +113,9 @@ class _MyHomePageState extends State<MyHomePage> {
 
             
             ),
-            const SizedBox(height: 20), // ESPACIO ENTRE FILAS
-            Row( //segunda fila 
-            mainAxisAlignment: MainAxisAlignment.center,
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-              const Text('Esta es la segunda fila UuU')
-            ],
-            ),
 
-            
+           
+
             
             const SizedBox(height: 20), // ESPACIO ENTRE FILAS
 
@@ -123,21 +125,40 @@ class _MyHomePageState extends State<MyHomePage> {
             children: [
               const Text('Esta es la segunda fila UuU')
             ],
-
-            ),
-            //text file
-            IconButton(
-               icon: const Icon(Icons.minimize),
-               tooltip: 'Disminuir',
-               onPressed: () {
-               Navigator.push(
-               context,
-               MaterialPageRoute(builder:
-(context) => FormView()),
-);
-},
-           ),
+            )
         
+          ],
+          
+        )
+
+),
+/**
+        child: Column(
+         
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: <Widget>[
+            const Text('Adri points'),
+            Text(
+              '$_counter',
+              style: Theme.of(context).textTheme.headlineMedium,
+            ),
+            
+            IconButton(
+          icon: const Icon(Icons.add),
+          tooltip: 'Aumentar',
+          onPressed: _incrementCounter,
+        ),
+
+             IconButton(
+          icon: const Icon(Icons.minimize),
+          tooltip: 'Disminuir',
+          onPressed: (){
+            setState(() {
+              _counter--;
+            });
+          },
+        ),
+
           ],
           
         )
@@ -155,3 +176,4 @@ class _MyHomePageState extends State<MyHomePage> {
     );
   }
 }
+*/
