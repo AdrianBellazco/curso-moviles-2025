@@ -1,73 +1,64 @@
-# hola_mundo
-TALLER-1
-Gestión de Usuarios con Tabs y Ciclo de Vida en Flutter
+## Documentación Final del Proyecto Flutter - Taller API, Future, Timer e Isolate
 
-Adrián Sebastian Saavedra Romero
-6° semestre - Ingeniería en Sistemas
+### 📝 Información General
+Este proyecto es una app desarrollada en Flutter como parte de un taller académico. Integra diversos conceptos importantes del desarrollo móvil como consumo de APIs, temporizadores, manejo de tareas pesadas con Isolates, navegación entre pantallas y ciclo de vida de widgets. Todo está estructurado para seguir buenas prácticas de arquitectura y organización.
 
-Esta aplicación de ejemplo está desarrollada en Flutter y tiene como objetivo:
+---
 
-Mostrar el uso del paso de parámetros entre widgets.
+### 📁 Estructura General de la App
+- **BaseView**: Widget base reutilizable para mantener consistencia en el diseño.
+- **Drawer de Navegación**: Permite acceder a distintas secciones:
+  - Lista de Estudiantes
+  - Temporizadores
+  - Tarea Pesada
+  - Restaurante (API)
 
-Evidenciar el ciclo de vida de los widgets en Flutter.
+---
 
-Aplicar conceptos como TabBar, Drawer, y gestión de estado.
+### 1️⃣ Lista de Estudiantes
+- **Uso de `FutureBuilder`** para simular una carga de datos.
+- **Simulación de carga** con `Future.delayed`.
+- Se gestionó correctamente el **ciclo de vida** para evitar errores si el usuario cambia de pantalla.
 
-La app permite registrar nombres de usuarios y visualizarlos en una cuadrícula desde otra pestaña. Todo el proceso se realiza en una única vista, utilizando un TabBar.
+---
 
-TALLER-2
+### 2️⃣ Temporizadores
+- Se usó `Timer.periodic` para crear un contador.
+- Se agregaron botones para:
+  - Iniciar
+  - Pausar
+  - Reiniciar
+- Diseño centrado y personalizado.
 
-Implementar funcionalidades en Flutter que evidencien el uso de Future, Timer e Isolate, entendiendo su importancia en la ejecución asincrónica y optimización del rendimiento de las aplicaciones móviles.
+---
 
-punto 1 ---------------
+### 3️⃣ Tarea Pesada (Isolate)
+- Uso de `compute()` para ejecutar una función pesada en un Isolate separado.
+- Se previno el intento de actualización de la UI si el usuario cambia de pantalla antes de que termine la tarea.
 
-Se creó una vista llamada Lista de Estudiantes.
+---
 
-Se simula una consulta a base de datos usando un Future.delayed de 3 segundos.
+### 4️⃣ Restaurante (Consumo de API de TheMealDB)
+#### Listado de Platos
+- **Servicio** para consumir la API y obtener una lista de platos.
+- Se muestran con imágenes y nombres en un `GridView`.
+- Al pulsar sobre un plato, se navega a la pantalla de detalle usando `GoRouter` y paso de parámetros.
 
-Se usa un FutureBuilder para mostrar:
+#### Detalle del Plato
+- Se consulta la API por `idMeal` para obtener la información detallada del plato.
+- Se muestra:
+  - Imagen del plato.
+  - Título.
+  - ID.
+  - Instrucciones.
 
-Un CircularProgressIndicator mientras carga.
+---
 
-Un ListView.builder con tarjetas (Card) cuando los datos llegan.
+### 📦 Otros Elementos Técnicos
+- Organización en carpetas: `views`, `services`, `models`.
+- Manejo correcto del ciclo de vida de widgets.
+- Navegación declarativa con `go_router`.
+- Código limpio, modular y reutilizable.
 
-punto 2 ---------------
+---
 
-Vista llamada Temporizadores.
-
-Uso de Timer.periodic para contar segundos.
-
-Se implementaron tres botones:
-
-Iniciar
-
-Pausar
-
-Reiniciar
-
-También se usó setState para actualizar el contador en tiempo real.
-
-Todo el contenido se centró visualmente en la pantalla para mejor estética.
-
-punto 3 ---------------
-
-Vista llamada Tarea Pesada.
-
-Uso de Isolate.spawn para lanzar una tarea de suma grande (0 a 100 millones).
-
-Se usa un ReceivePort para recibir el resultado del Isolate.
-
-Se controla el ciclo de vida con if (!mounted) para evitar errores si el usuario cambia de pantalla durante la ejecución.
-
-## Getting Started
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
