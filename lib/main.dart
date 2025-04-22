@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';import 'package:flutter_dotenv/flutter_do
 import 'package:hola_mundo/routes/app_router.dart';
 import 'package:hola_mundo/themes/app_theme.dart';
 
-import 'themes/app_theme.dart';
 
 // punto de partida de la aplicacion 
 void main() async {
